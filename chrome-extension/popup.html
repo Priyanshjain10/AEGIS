@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AEGIS</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      width: 300px;
+      background: #000814;
+      color: #e0f7ff;
+      font-family: 'Share Tech Mono', 'Courier New', monospace;
+      padding: 0;
+    }
+    .header {
+      background: #000814;
+      border-bottom: 1px solid rgba(0, 245, 255, 0.3);
+      padding: 14px 16px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .logo {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 18px;
+      color: #00f5ff;
+      text-shadow: 0 0 8px rgba(0, 245, 255, 0.6);
+      letter-spacing: 2px;
+    }
+    .badge {
+      font-size: 8px;
+      color: #00f5ff;
+      background: rgba(0, 245, 255, 0.1);
+      border: 1px solid rgba(0, 245, 255, 0.3);
+      padding: 2px 6px;
+      border-radius: 2px;
+      letter-spacing: 1px;
+    }
+    .status-bar {
+      padding: 10px 16px;
+      background: rgba(0, 245, 255, 0.04);
+      border-bottom: 1px solid rgba(0, 245, 255, 0.15);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 11px;
+    }
+    .dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: #00ff88;
+      box-shadow: 0 0 6px #00ff88;
+      animation: pulse 2s ease-in-out infinite;
+    }
+    @keyframes pulse { 0%,100%{opacity:1} 50%{opacity:.4} }
+    .content { padding: 16px; }
+    .instruction {
+      font-size: 12px;
+      color: rgba(224, 247, 255, 0.7);
+      line-height: 1.6;
+      margin-bottom: 14px;
+    }
+    .instruction code {
+      color: #00f5ff;
+      background: rgba(0, 245, 255, 0.1);
+      padding: 1px 5px;
+      border-radius: 2px;
+      font-size: 11px;
+    }
+    .open-btn {
+      display: block;
+      width: 100%;
+      padding: 10px;
+      background: transparent;
+      border: 1px solid #00f5ff;
+      color: #00f5ff;
+      font-family: 'Orbitron', 'Courier New', monospace;
+      font-size: 11px;
+      font-weight: bold;
+      letter-spacing: 1px;
+      cursor: pointer;
+      transition: all 0.2s;
+      text-align: center;
+    }
+    .open-btn:hover {
+      background: rgba(0, 245, 255, 0.12);
+      box-shadow: 0 0 12px rgba(0, 245, 255, 0.4);
+    }
+    .footer {
+      padding: 10px 16px;
+      border-top: 1px solid rgba(0, 245, 255, 0.15);
+      font-size: 9px;
+      color: rgba(224, 247, 255, 0.3);
+      text-align: center;
+      letter-spacing: 0.5px;
+    }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <span class="logo">AEGIS</span>
+    <span class="badge">v1.0 · MIT</span>
+  </div>
+
+  <div class="status-bar">
+    <div class="dot"></div>
+    <span>Extension active — ready to scan</span>
+  </div>
+
+  <div class="content">
+    <p class="instruction">
+      <strong style="color:#e0f7ff">Right-click any image</strong> on any webpage and select
+      <code>Scan with AEGIS</code> to run forensic deepfake analysis.
+    </p>
+    <p class="instruction" style="margin-bottom:16px">
+      Analysis runs <strong style="color:#00f5ff">100% in-browser</strong> — no upload,
+      no server, no data leaves your device.
+    </p>
+    <button class="open-btn" id="openApp">OPEN AEGIS PLATFORM</button>
+  </div>
+
+  <div class="footer">
+    Team BrainByte · RockVerse Hackathon 2026 · Open Source
+  </div>
+
+  <script>
+    document.getElementById('openApp').addEventListener('click', () => {
+      chrome.tabs.create({ url: 'https://aegis-deepfake-detector.netlify.app' });
+    });
+  </script>
+</body>
+</html>

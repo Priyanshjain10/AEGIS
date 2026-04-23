@@ -1,0 +1,9 @@
+node_modules/
+dist/
+.env
+.env.local
+*.DS_Store
+backend/__pycache__/
+backend/app/__pycache__/
+*.pyc
+.aegis/

@@ -1,0 +1,191 @@
+.page {
+  display: flex;
+  height: calc(100vh - 52px);
+  margin-top: 52px;
+  padding: 16px;
+  gap: 14px;
+  position: relative;
+  z-index: 1;
+}
+
+/* ── Panel base ─ */
+.panel {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--r-lg);
+  backdrop-filter: blur(12px);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.panelHead {
+  padding: 14px 18px 10px;
+  border-bottom: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.panelTitle {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 11px;
+  letter-spacing: .08em;
+  color: var(--cyan);
+}
+
+.panelBody {
+  flex: 1;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  padding: 14px;
+}
+
+/* ── Left panel (terminal) ─ */
+.left {
+  flex: 1.1;
+}
+
+.terminal {
+  flex: 1;
+  background: rgba(0,0,0,0.6);
+  border-radius: var(--r-sm);
+  padding: 14px;
+  overflow-y: auto;
+  font-size: 11px;
+  color: var(--green);
+  line-height: 1.7;
+}
+
+.logLine {
+  animation: fadeInFast .15s ease both;
+}
+
+.cursor {
+  display: inline-block;
+  animation: blink 1s step-end infinite;
+  color: var(--cyan);
+}
+
+.backendTag {
+  margin-top: 10px;
+  padding: 7px 12px;
+  border-radius: var(--r-sm);
+  font-size: 10px;
+  letter-spacing: .04em;
+}
+
+/* ── Center panel ─ */
+.center {
+  flex: 1.6;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+
+.scannerWrap {
+  position: relative;
+  width: 340px;
+  height: 340px;
+  border-radius: var(--r-lg);
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0,0,0,0.5);
+  border: 1px solid var(--border-med);
+}
+
+.ring {
+  position: absolute;
+  width: 105%;
+  height: 105%;
+  border: 1.5px dashed var(--cyan);
+  border-radius: 50%;
+  opacity: .35;
+  pointer-events: none;
+  animation: rotateSlow 8s linear infinite;
+}
+
+.ring2 {
+  position: absolute;
+  width: 88%;
+  height: 88%;
+  border: 1px solid rgba(0,229,255,0.2);
+  border-radius: 50%;
+  pointer-events: none;
+  animation: rotateSlow 14s linear infinite reverse;
+}
+
+.targetImage {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  opacity: .8;
+  filter: sepia(60%) hue-rotate(170deg) saturate(160%);
+}
+
+.scanBeam {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 3px;
+  opacity: .9;
+  animation: scanSweep 2.2s ease-in-out infinite;
+}
+
+.scanLabel {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 11px;
+  letter-spacing: .2em;
+}
+
+/* ── Right panel (progress) ─ */
+.right {
+  flex: 1.1;
+}
+
+.stages {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.stageRow {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.stageLabel {
+  font-size: 10px;
+  color: var(--text-2);
+  display: flex;
+  justify-content: space-between;
+}
+
+.stagePct {
+  color: var(--text-3);
+}
+
+.trackBg {
+  height: 4px;
+  border-radius: 2px;
+  background: rgba(255,255,255,0.06);
+  overflow: hidden;
+}
+
+.trackFill {
+  height: 100%;
+  border-radius: 2px;
+  transition: width .2s ease;
+}
+
+.serverBox {
+  margin-top: auto;
+  padding: 10px 14px;
+  border-radius: var(--r-sm);
+  font-size: 10px;
+}

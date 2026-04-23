@@ -1,0 +1,206 @@
+.page {
+  display: flex;
+  height: calc(100vh - 52px);
+  margin-top: 52px;
+  padding: 16px;
+  gap: 14px;
+  position: relative;
+  z-index: 1;
+}
+
+.panel {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--r-lg);
+  backdrop-filter: blur(12px);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.panelHead {
+  padding: 14px 18px 10px;
+  border-bottom: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.panelTitle {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 11px;
+  letter-spacing: .08em;
+  color: var(--cyan);
+}
+
+.panelBody {
+  flex: 1;
+  overflow-y: auto;
+  padding: 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+/* ── Left sidebar ─ */
+.left {
+  flex: 1;
+  min-width: 0;
+}
+
+.findingItem {
+  padding: 10px 12px;
+  border-radius: var(--r-sm);
+  border-left: 2px solid;
+  font-size: 11px;
+  line-height: 1.55;
+  color: var(--text-2);
+  background: rgba(255,255,255,0.02);
+}
+
+.hotspotWrap {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 4px;
+}
+
+.hotspot {
+  font-size: 9px;
+  padding: 3px 9px;
+  border-radius: 3px;
+  letter-spacing: .04em;
+  background: var(--red-dim);
+  border: 1px solid rgba(255,34,68,0.3);
+  color: var(--red);
+}
+
+.anonCodeWrap { display: flex; flex-wrap: wrap; gap: 6px; }
+.anonCode {
+  font-size: 9px; padding: 3px 9px; border-radius: 3px;
+  background: var(--amber-dim); border: 1px solid rgba(255,184,0,0.3);
+  color: var(--amber);
+}
+
+/* ── Center ─ */
+.center {
+  flex: 1.8;
+  display: flex;
+  flex-direction: column;
+}
+
+.imageBox {
+  flex: 1;
+  position: relative;
+  overflow: hidden;
+  border-radius: var(--r-md);
+  background: rgba(0,0,0,0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.canvas {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+}
+
+.serverBadge {
+  position: absolute;
+  top: 10px; left: 10px;
+  padding: 5px 12px;
+  border-radius: 20px;
+  font-size: 9px;
+  background: rgba(0,255,157,0.1);
+  border: 1px solid rgba(0,255,157,0.3);
+  color: var(--green);
+  letter-spacing: .04em;
+}
+
+.elaStrip {
+  margin-top: 10px;
+  border-radius: var(--r-sm);
+  overflow: hidden;
+  border: 1px solid var(--border);
+}
+
+.elaHead {
+  padding: 4px 10px;
+  font-size: 9px;
+  color: var(--text-3);
+  background: var(--bg-2);
+  letter-spacing: .06em;
+}
+
+.elaCanvas {
+  width: 100%;
+  height: 52px;
+  display: block;
+}
+
+.viewTabs {
+  display: flex;
+  gap: 8px;
+  margin-top: 10px;
+  flex-wrap: wrap;
+}
+
+.viewTab {
+  padding: 7px 14px;
+  border-radius: var(--r-sm);
+  font-family: 'Orbitron', sans-serif;
+  font-size: 9px;
+  letter-spacing: .06em;
+  border: 1px solid var(--border);
+  background: transparent;
+  color: var(--text-2);
+  cursor: pointer;
+  transition: all .15s;
+}
+
+.viewTab:hover { border-color: var(--border-med); color: var(--text); }
+
+.viewTab.activeServer {
+  border-color: rgba(0,255,157,0.4);
+  color: var(--green);
+  background: rgba(0,255,157,0.06);
+}
+
+.viewTab.active {
+  border-color: var(--cyan);
+  color: var(--cyan);
+  background: var(--cyan-glow);
+}
+
+/* ── Right sidebar ─ */
+.right {
+  flex: 1;
+  min-width: 0;
+}
+
+.freqChart {
+  display: flex;
+  align-items: flex-end;
+  height: 100px;
+  gap: 3px;
+  border-bottom: 1px solid var(--border);
+  border-left: 1px solid var(--border);
+  padding: 8px 0 0 0;
+  margin-top: 4px;
+}
+
+.freqBar {
+  flex: 1;
+  border-radius: 2px 2px 0 0;
+  transition: height .3s ease;
+  min-width: 0;
+}
+
+.freqNote {
+  font-size: 11px;
+  color: var(--text-2);
+  line-height: 1.55;
+  margin-top: 10px;
+}

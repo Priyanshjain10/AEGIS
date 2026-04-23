@@ -1,0 +1,24 @@
+/* Animated grid background — subtle, not distracting */
+.hexGrid {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background-image:
+    linear-gradient(var(--border) 1px, transparent 1px),
+    linear-gradient(90deg, var(--border) 1px, transparent 1px);
+  background-size: 60px 60px;
+  animation: gridMove 8s linear infinite;
+  opacity: .6;
+}
+
+/* Radial vignette so grid fades at edges */
+.hexGrid::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse at 50% 50%,
+    transparent 40%,
+    var(--bg) 90%
+  );
+}

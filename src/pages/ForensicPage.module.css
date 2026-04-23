@@ -1,0 +1,219 @@
+.page {
+  min-height: calc(100vh - 52px);
+  margin-top: 52px;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  z-index: 1;
+}
+
+.mainCard {
+  width: 100%;
+  max-width: 960px;
+  height: calc(100vh - 92px);
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--r-xl);
+  backdrop-filter: blur(16px);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.header {
+  padding: 18px 24px 14px;
+  border-bottom: 1px solid var(--border);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.headerLeft {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.headerTitle {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 14px;
+  letter-spacing: .06em;
+  color: var(--cyan);
+}
+
+.headerMeta {
+  font-size: 10px;
+  color: var(--text-3);
+  letter-spacing: .04em;
+}
+
+.tabs {
+  display: flex;
+  gap: 8px;
+}
+
+.tab {
+  padding: 7px 18px;
+  border-radius: var(--r-sm);
+  font-family: 'Orbitron', sans-serif;
+  font-size: 9px;
+  font-weight: 600;
+  letter-spacing: .08em;
+  border: 1px solid var(--border);
+  background: transparent;
+  color: var(--text-2);
+  cursor: pointer;
+  transition: all .15s;
+}
+
+.tab:hover { border-color: var(--border-med); color: var(--text); }
+
+.tab.active {
+  border-color: var(--cyan);
+  color: var(--cyan);
+  background: var(--cyan-glow);
+  box-shadow: 0 0 10px rgba(0,229,255,0.12);
+}
+
+.content {
+  flex: 1;
+  overflow-y: auto;
+  padding: 20px 24px;
+}
+
+/* Metadata table */
+.metaTable {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.metaTable tr { border-bottom: 1px solid var(--border); }
+.metaTable tr:last-child { border-bottom: none; }
+
+.metaTable td {
+  padding: 11px 14px;
+  font-size: 12px;
+}
+
+.metaTable td:first-child {
+  color: var(--cyan);
+  font-size: 10px;
+  letter-spacing: .06em;
+  width: 30%;
+  background: rgba(0,229,255,0.02);
+}
+
+/* Analysis accordion */
+.accordion { display: flex; flex-direction: column; gap: 8px; }
+
+.accItem {
+  border: 1px solid var(--border);
+  border-radius: var(--r-md);
+  overflow: hidden;
+  background: var(--bg-2);
+}
+
+.accHead {
+  padding: 14px 18px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid var(--border);
+}
+
+.accName { font-size: 12px; font-weight: 500; color: var(--text); }
+.accScore { font-size: 11px; color: var(--cyan); font-family: 'Share Tech Mono', monospace; }
+
+.accBody {
+  padding: 12px 18px;
+  font-size: 11px;
+  color: var(--text-2);
+  line-height: 1.6;
+}
+
+/* Timeline */
+.timelineWrap { height: 100%; display: flex; flex-direction: column; }
+.timelineLabel { font-size: 11px; color: var(--text-2); margin-bottom: 14px; }
+
+.timelineBars {
+  flex: 1;
+  display: flex;
+  align-items: flex-end;
+  gap: 2px;
+  border-bottom: 1px solid var(--border);
+  border-left: 1px solid var(--border);
+  padding-bottom: 0;
+  min-height: 120px;
+  max-height: 200px;
+}
+
+.timeBar {
+  flex: 1;
+  border-radius: 2px 2px 0 0;
+  min-width: 0;
+  transition: opacity .2s;
+}
+.timeBar:hover { opacity: .7; }
+
+.timelineNote {
+  font-size: 11px;
+  color: var(--text-2);
+  margin-top: 10px;
+  line-height: 1.55;
+}
+
+/* Waveform */
+.waveform {
+  display: flex;
+  align-items: center;
+  gap: 1px;
+  height: 50px;
+  background: var(--bg-2);
+  border-radius: var(--r-sm);
+  padding: 4px;
+  border: 1px solid var(--border);
+  margin-bottom: 12px;
+}
+
+.wavebar { flex: 1; border-radius: 1px; min-height: 2px; }
+
+/* Footer */
+.footer {
+  padding: 16px 24px;
+  border-top: 1px solid var(--border);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-shrink: 0;
+  background: rgba(0,0,0,0.2);
+}
+
+.footerVerdict { font-size: 13px; }
+.footerBtns { display: flex; gap: 10px; }
+
+/* Server module scores */
+.serverScores {
+  padding: 14px 16px;
+  border-radius: var(--r-md);
+  border: 1px solid rgba(0,255,157,0.2);
+  background: rgba(0,255,157,0.03);
+  margin-bottom: 12px;
+}
+
+.serverScoreTitle {
+  font-size: 9px;
+  color: var(--green);
+  letter-spacing: .1em;
+  margin-bottom: 10px;
+}
+
+.serverScoreRow {
+  display: flex;
+  justify-content: space-between;
+  font-size: 11px;
+  margin-bottom: 6px;
+  align-items: center;
+}
